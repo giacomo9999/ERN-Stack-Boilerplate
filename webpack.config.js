@@ -5,15 +5,22 @@ module.exports = {
   watch: false,
   mode: "development",
   entry: "./src/index.js",
-  output: { filename: "main.js", path: path.resolve(__dirname, "dist") },
+  output: {
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist")
+  },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel_loader"
+        loader: "babel-loader"
       }
     ]
   },
-  plugins: [new HtmlWebpackPlugin({ template: "src/index.html" })]
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "src/index.html"
+    })
+  ]
 };
